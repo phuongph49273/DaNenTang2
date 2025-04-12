@@ -1,2 +1,2 @@
-import LoginScreen from "./login";
-export default LoginScreen;
+import DangNhap from "./login";
+export default DangNhap;

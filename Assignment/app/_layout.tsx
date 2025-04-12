@@ -34,6 +34,15 @@ export default function RootLayout() {
         <Stack.Screen name="login" options={{ headerShown: false }} />
         <Stack.Screen name="register" options={{ headerShown: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/main" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/PlantsScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/PotsScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/AccessoriesScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/CombosScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/OrdersScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/UsersScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/SettingsScreen" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/RevenueScreen" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

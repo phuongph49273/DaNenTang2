@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
     View,
     Text,
@@ -10,7 +10,8 @@ import {
     Alert
 } from 'react-native';
 import axios from 'axios';
-import { useRouter } from 'expo-router';
+import { API_CONFIG } from '../ApiService';
+import { useFocusEffect, useRouter } from 'expo-router';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 interface CartItem {
@@ -28,20 +29,24 @@ export default function Cart() {
     const [cartItems, setCartItems] = useState<CartItem[]>([]);
     const [totalPrice, setTotalPrice] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
-    const baseURL = 'http://192.168.16.196:3000';
+    
+    const baseURL = `${API_CONFIG.baseURL}`;
 
-    useEffect(() => {
-        fetchCartItems();
-    }, [isLoading]);
+    const getUserId = async () => {
+            return await AsyncStorage.getItem('userId');
+        };
 
+    useFocusEffect(
+        React.useCallback(() => {
+            fetchCartItems();
+            return () => {};
+        }, [])
+    );
     useEffect(() => {
         calculateTotalPrice();
     }, [cartItems]);
 
-    const getUserId = async () => {
-        return await AsyncStorage.getItem('userId');
-    };
-
+    
     const fetchCartItems = async () => {
         try {
             const userId = await getUserId();
@@ -78,6 +83,7 @@ export default function Cart() {
 
             await axios.patch(`${baseURL}/users/${userId}`, { cart: updatedCart });
             setIsLoading(true);
+            fetchCartItems();
         } catch (error) {
             console.error('Error updating cart:', error);
         }
@@ -91,6 +97,7 @@ export default function Cart() {
             const updatedCart = cartItems.filter(item => item.id !== itemId);
             await axios.patch(`${baseURL}/users/${userId}`, { cart: updatedCart });
             setIsLoading(true);
+            fetchCartItems();
         } catch (error) {
             console.error('Error removing item:', error);
         }
@@ -103,6 +110,7 @@ export default function Cart() {
             
             await axios.patch(`${baseURL}/users/${userId}`, { cart: [] });
             setIsLoading(true);
+            fetchCartItems();
         } catch (error) {
             console.error('Error removing all items:', error);
         }
@@ -144,10 +152,11 @@ export default function Cart() {
                             {
                                 text: 'Xóa',
                                 style: 'destructive',
-                                onPress: () => removeItem(item.id)
+                                onPress: () => removeItem(item.id),
                             }
                         ]
                     );
+                    
                 }}
             >
                 <Text style={styles.removeButtonText}>🗑️</Text>
@@ -162,9 +171,9 @@ export default function Cart() {
                     <Text style={styles.backButtonText}>←</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={fetchCartItems} style={styles.reloadButton}>
+                
                     <Text style={styles.headerTitle}>Giỏ Hàng</Text>
-                </TouchableOpacity>
+               
 
                 {cartItems.length > 0 && (
                     <TouchableOpacity onPress={() => {
@@ -184,9 +193,6 @@ export default function Cart() {
                         <Text style={styles.removeAllButtonText}>Xóa tất cả</Text>
                     </TouchableOpacity>
                 )}
-            </View>
-            <View style={styles.notificationBar}>
-                <Text style={styles.notificationText}>!!!Bấm "Giỏ Hàng" để load lại!!!</Text>
             </View>
 
             <ScrollView style={styles.scrollContainer}>
@@ -210,8 +216,12 @@ export default function Cart() {
                         <TouchableOpacity
                             style={styles.checkoutButton}
                             onPress={() => {
-
-                                Alert.alert('Thông báo', 'Chức năng thanh toán đang được phát triển');
+                                // Change this from showing an alert to navigating to payment screen
+                                if (cartItems.length > 0) {
+                                    router.push('/(tabs)/PaymentScreen');
+                                } else {
+                                    Alert.alert('Thông báo', 'Giỏ hàng của bạn trống');
+                                }
                             }}
                         >
                             <Text style={styles.checkoutButtonText}>THANH TOÁN</Text>

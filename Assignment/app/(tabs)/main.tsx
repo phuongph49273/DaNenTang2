@@ -11,6 +11,8 @@ import {
   FlatList,
 } from 'react-native';
 import axios from 'axios';
+import { API_CONFIG } from '../ApiService';
+import FastImage from 'react-native-fast-image'
 
 const { width } = Dimensions.get('window');
 
@@ -45,7 +47,7 @@ const TrangChu: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const baseURL = 'http://192.168.16.196:3000';
+        const baseURL = `${API_CONFIG.baseURL}`;
         const [plantsRes, potsRes, accessoriesRes, combosRes] = await Promise.all([
           axios.get(`${baseURL}/plants`),
           axios.get(`${baseURL}/pots`),
@@ -70,6 +72,16 @@ const TrangChu: React.FC = () => {
 
     fetchData();
   }, []);
+  const getLocalImagePlaceholder = (category:any) => {
+    switch (category) {
+      case 'plants':
+        return require('@/assets/images/no_image.png');
+      case 'pots':
+        return require('@/assets/images/no_image.png');
+      default:
+        return require('@/assets/images/no_image.png');
+    }
+  };
 
   const renderProduct = (item: Product) => (
     <TouchableOpacity
@@ -88,10 +100,16 @@ const TrangChu: React.FC = () => {
       }}
     >
       <View style={styles.productImageContainer}>
-        <Image
-          source={{ uri: item.image }}
-          style={styles.productImage}
-        />
+      <FastImage
+        source={{ 
+          uri: item.image,
+          priority: FastImage.priority.normal,
+          cache: FastImage.cacheControl.immutable
+        }}
+        style={styles.productImage}
+        fallback={true}
+        defaultSource={require('@/assets/images/no_image.png')}
+      />
       </View>
       <View style={styles.productDetailsContainer}>
         <Text style={styles.productName}>{item.name}</Text>
@@ -168,24 +186,27 @@ const TrangChu: React.FC = () => {
 
       {/* Plants Section */}
       <View style={styles.section}>
-        <View style={{flexDirection: 'row'}}>
-          <Text style={styles.sectionTitle}>Cây trồng</Text>
-          <TouchableOpacity
-          style={styles.viewMoreButton}>
+        <Text style={styles.sectionTitle}>Cây trồng</Text>
+        <View style={styles.productGrid}>
+          {products.plants.map(renderProduct)}
+        </View>
+
+        <TouchableOpacity
+          style={styles.viewMoreButton}
+          // onPress={() => {
+          //   router.push({
+          //     pathname: "/(tabs)/AllPlants", 
+          //     params: {
+          //       category: 'plants'
+          //     }
+          //   });
+          // }}
+        >
           <Text style={styles.viewMoreText}>Xem thêm Cây trồng</Text>
           <Text style={styles.arrow}>→</Text>
         </TouchableOpacity>
-        </View>
-        
-        <FlatList
-          data={products.plants}
-          renderItem={({ item }) => renderProduct(item)}
-          keyExtractor={(item) => item.id}
-          numColumns={2}
-          scrollEnabled={false}
-        />
-        
       </View>
+      
 
       {/* Pots Section */}
       <View style={styles.section}>
@@ -195,7 +216,16 @@ const TrangChu: React.FC = () => {
         </View>
 
         <TouchableOpacity
-          style={styles.viewMoreButton}>
+          style={styles.viewMoreButton}
+          // onPress={() => {
+          //   router.push({
+          //     pathname: "/(tabs)/AllPots", 
+          //     params: {
+          //       category: 'pots'
+          //     }
+          //   });
+          // }}
+        >
           <Text style={styles.viewMoreText}>Xem thêm Chậu cây trồng</Text>
           <Text style={styles.arrow}>→</Text>
         </TouchableOpacity>
@@ -210,7 +240,16 @@ const TrangChu: React.FC = () => {
           {products.accessories.map(renderProduct)}
         </View>
         <TouchableOpacity
-          style={styles.viewMoreButton}>
+          style={styles.viewMoreButton}
+          // onPress={() => {
+          //   router.push({
+          //     pathname: "/(tabs)/AllAccessories",
+          //     params: {
+          //       category: 'accessories'
+          //     }
+          //   });
+          // }}
+        >
           <Text style={styles.viewMoreText}>Xem thêm Phụ kiện</Text>
           <Text style={styles.arrow}>→</Text>
         </TouchableOpacity>

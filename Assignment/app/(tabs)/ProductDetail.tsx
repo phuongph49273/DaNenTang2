@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import uuid from 'react-native-uuid';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { API_CONFIG } from '../ApiService';
 
 
 interface Product {
@@ -46,7 +46,7 @@ export default function ProductDetail({ onCartUpdate }: ProductDetailProps) {
             console.log('Params received:', { id, category });
 
             try {
-                const baseURL = 'http://192.168.16.196:3000';
+                const baseURL = `${API_CONFIG.baseURL}`;
                 console.log('Full URL:', `${baseURL}/${category}/${id}`);
                 const response = await axios.get(`${baseURL}/${category}/${id}`);
                 console.log('Response data:', response.data);
@@ -104,7 +104,7 @@ export default function ProductDetail({ onCartUpdate }: ProductDetailProps) {
         }
     
         try {
-            const baseURL = 'http://192.168.16.196:3000';
+            const baseURL = `${API_CONFIG.baseURL}`;
     
             // Fetch current user data
             const userResponse = await axios.get(`${baseURL}/users/${userId}`);

@@ -1,6 +1,13 @@
 {
   "users": [
     {
+      "id": "abc",
+      "fullName": "admin",
+      "email": "admim@gmail.com",
+      "phoneNumber": "",
+      "password": "admin"
+    },
+    {
       "id": "d31135c46ed498",
       "fullName": "phuong",
       "email": "phuong@gmail.com",
@@ -27,25 +34,18 @@
     },
     {
       "id": "c28fab65fce0c8",
-      "fullName": "phuong",
+      "fullName": "phuongddd",
       "email": "p@gmail.com",
       "phoneNumber": "023456789",
       "password": "123456",
-      "cart": [
-        {
-          "id": "6248a30c-edfc-44d4-aca0-379f3e3ae396",
-          "productId": "3",
-          "name": "Grey Star Calarthea",
-          "price": "255.000đ",
-          "image": "https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/1280x1280/products/6650/27801/e1e92163-38c3-5eb4-8a2d-6caa0c79e02e__03120.1713469985.jpg?c=3",
-          "quantity": 4
-        }
-      ]
+      "cart": [],
+      "address": "Ha noi",
+      "avatar": "file:///data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FAssignment-99030d1f-3a5b-4e87-b1b6-125f00525eac/ImagePicker/dd2b1007-5041-4d08-ab50-a682b70418c8.jpeg"
     }
   ],
   "plants": [
     {
-      "id": "1",
+      "id": "aa1",
       "name": "Spider Plant",
       "price": "250.000đ",
       "image": "https://www.flowerstation.co.uk/cdn/shop/files/spider-plant-res-brown__30216.1691515154.800.800.jpg?v=1720103432",
@@ -53,15 +53,15 @@
       "quantity": 118
     },
     {
-      "id": "2",
+      "id": "aa2",
       "name": "Song of India",
       "price": "265.000đ",
       "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lpok3ii87tck9c",
       "lightPreference": "Ưa sáng",
-      "quantity": 150
+      "quantity": 147
     },
     {
-      "id": "3",
+      "id": "aa3",
       "name": "Grey Star Calarthea",
       "price": "255.000đ",
       "image": "https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/1280x1280/products/6650/27801/e1e92163-38c3-5eb4-8a2d-6caa0c79e02e__03120.1713469985.jpg?c=3",
@@ -69,8 +69,8 @@
       "quantity": 243
     },
     {
-      "id": "4",
-      "name": "Banana Plant",
+      "id": "aa4",
+      "name": "Banana Plant Update",
       "price": "175.000đ",
       "image": "https://product.hstatic.net/200000555893/product/cay-la-dong-gia-4_b71ca425645748808aae113d4ff96dd7.jpg",
       "lightPreference": "Ưa sáng",
@@ -79,28 +79,28 @@
   ],
   "pots": [
     {
-      "id": "1",
+      "id": "bb1",
       "name": "Planta Rosewood",
       "price": "105.000đ",
       "image": "https://jysk.vn/Data/Sites/1/Product/11754/4912192-coc-frederik-gom-xanh-xanh-la-jysk-9.jpg",
       "quantity": 230
     },
     {
-      "id": "2",
+      "id": "bb2",
       "name": "Planta Dove Grey",
       "price": "150.000đ",
       "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRxlYGGNe1kEC5GM7b89GPdNP_EIAPBLwIHvx9NojYFchAfO34W",
-      "quantity": 176
+      "quantity": 173
     },
     {
-      "id": "3",
+      "id": "bb3",
       "name": "Planta Trắng",
       "price": "250.000đ",
       "image": "https://mayflowers.ca/cdn/shop/files/IMG_6362.jpg?v=1690467312&width=493",
-      "quantity": 324
+      "quantity": 322
     },
     {
-      "id": "4",
+      "id": "bb4",
       "name": "Planta Lemon Balm",
       "price": "250.000đ",
       "image": "https://down-br.img.susercontent.com/file/sg-11134201-22120-e89n7ns51vkvb4",
@@ -109,28 +109,28 @@
   ],
   "accessories": [
     {
-      "id": "1",
+      "id": "vv1",
       "name": "Bình tưới CB2 SAIC",
       "price": "250.000đ",
       "image": "https://cdn1.bigcommerce.com/server600/eqcqd/products/39471/images/932797/ctc1786-spwh_1__28657.1709641150.1280.1280.jpg?c=2",
-      "quantity": 151
+      "quantity": 146
     },
     {
-      "id": "2",
+      "id": "vv2",
       "name": "Bình xịt Xiaoda",
       "price": "250.000đ",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgi9nWip7wChefM5hm1FqERhlVindWNhNzjuLMp8vl-ZbcrpwJ",
       "quantity": 204
     },
     {
-      "id": "3",
+      "id": "vv3",
       "name": "Bộ cuốc xẻng mini",
       "price": "300.000đ",
       "image": "https://down-vn.img.susercontent.com/file/vn-11134201-23020-pww6uxpv61nvad",
       "quantity": 103
     },
     {
-      "id": "4",
+      "id": "vv4",
       "name": "Giá đỡ Finn Terrazzo",
       "price": "1.250.000đ",
       "image": "https://casanha.com/wp-content/uploads/2024/12/kiotviet_127ae7cc74e88c86e35242c50a477470.jpg",
@@ -139,10 +139,151 @@
   ],
   "combos": [
     {
-      "id": "1",
+      "id": "cc1",
       "name": "Lemon Balm Grow Kit",
       "image": "https://m.media-amazon.com/images/I/81JO+HAYIrL._AC_SY450_.jpg",
       "subtitle": "Gồm: hạt giống Lemon Balm, giá đỡ hữu cơ, chậu Planta, marker đánh dấu..."
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord-123456789",
+      "userId": "d31135c46ed498",
+      "customerInfo": {
+        "fullName": "phuong",
+        "email": "phuong@gmail.com",
+        "phoneNumber": "0123456789",
+        "address": "123 Đường ABC, Quận 1, TP.HCM"
+      },
+      "items": [
+        {
+          "id": "0f518347-b528-4430-80ea-7db4c22b03b2",
+          "productId": "1",
+          "name": "Spider Plant",
+          "price": "250.000đ",
+          "image": "https://www.flowerstation.co.uk/cdn/shop/files/spider-plant-res-brown__30216.1691515154.800.800.jpg?v=1720103432",
+          "quantity": 2,
+          "type": "plant"
+        },
+        {
+          "id": "5960ec02-e73a-41df-8d7b-ac6e8069833a",
+          "productId": "2",
+          "name": "Planta Dove Grey",
+          "price": "150.000đ",
+          "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRxlYGGNe1kEC5GM7b89GPdNP_EIAPBLwIHvx9NojYFchAfO34W",
+          "quantity": 1,
+          "type": "pot"
+        }
+      ],
+      "totalAmount": "650.000đ",
+      "shippingFee": "30.000đ",
+      "finalAmount": "680.000đ",
+      "paymentMethod": "COD",
+      "status": "Đã hoàn thành",
+      "orderDate": "2025-04-05T14:28:36.789Z"
+    },
+    {
+      "id": "ord-987654321",
+      "userId": "c28fab65fce0c8",
+      "customerInfo": {
+        "fullName": "phuong",
+        "email": "p@gmail.com",
+        "phoneNumber": "023456789",
+        "address": "456 Đường XYZ, Quận 2, TP.HCM"
+      },
+      "items": [
+        {
+          "id": "a4982c78-e26b-49a8-9a87-1d2e3f4a5b6c",
+          "productId": "1",
+          "name": "Bình tưới CB2 SAIC",
+          "price": "250.000đ",
+          "image": "https://cdn1.bigcommerce.com/server600/eqcqd/products/39471/images/932797/ctc1786-spwh_1__28657.1709641150.1280.1280.jpg?c=2",
+          "quantity": 1,
+          "type": "accessory"
+        },
+        {
+          "id": "b1234567-c89d-4e5f-6g7h-8i9j0k1l2m3n",
+          "productId": "3",
+          "name": "Grey Star Calarthea",
+          "price": "255.000đ",
+          "image": "https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/1280x1280/products/6650/27801/e1e92163-38c3-5eb4-8a2d-6caa0c79e02e__03120.1713469985.jpg?c=3",
+          "quantity": 2,
+          "type": "plant"
+        },
+        {
+          "id": "c9876543-d21e-5f4g-3h2i-1j0k9l8m7n6",
+          "productId": "3",
+          "name": "Planta Trắng",
+          "price": "250.000đ",
+          "image": "https://mayflowers.ca/cdn/shop/files/IMG_6362.jpg?v=1690467312&width=493",
+          "quantity": 2,
+          "type": "pot"
+        }
+      ],
+      "totalAmount": "1.260.000đ",
+      "shippingFee": "30.000đ",
+      "finalAmount": "1.290.000đ",
+      "paymentMethod": "Banking",
+      "status": "Đã hoàn thành",
+      "orderDate": "2025-04-10T09:15:22.456Z"
+    },
+    {
+      "id": "dfbe",
+      "userId": "c28fab65fce0c8",
+      "customerInfo": {
+        "fullName": "phuongddd",
+        "email": "p@gmail.com",
+        "address": "Ha Noi",
+        "phoneNumber": "023456789"
+      },
+      "items": [
+        {
+          "id": "6248a30c-edfc-44d4-aca0-379f3e3ae396",
+          "productId": "3",
+          "name": "Grey Star Calarthea",
+          "price": "255.000đ",
+          "image": "https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/1280x1280/products/6650/27801/e1e92163-38c3-5eb4-8a2d-6caa0c79e02e__03120.1713469985.jpg?c=3",
+          "quantity": 4
+        },
+        {
+          "id": "037a9435-a640-4cbe-a8b0-552bfbc07ca8",
+          "productId": "vv1",
+          "name": "Bình tưới CB2 SAIC",
+          "price": "250.000đ",
+          "image": "https://cdn1.bigcommerce.com/server600/eqcqd/products/39471/images/932797/ctc1786-spwh_1__28657.1709641150.1280.1280.jpg?c=2",
+          "quantity": 5
+        },
+        {
+          "id": "d235594d-6fa3-4c5d-a44f-d1823852e61d",
+          "productId": "bb3",
+          "name": "Planta Trắng",
+          "price": "250.000đ",
+          "image": "https://mayflowers.ca/cdn/shop/files/IMG_6362.jpg?v=1690467312&width=493",
+          "quantity": 2
+        },
+        {
+          "id": "f4480c78-da73-4141-8705-6f419f187721",
+          "productId": "aa2",
+          "name": "Song of India",
+          "price": "265.000đ",
+          "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lpok3ii87tck9c",
+          "quantity": 3
+        },
+        {
+          "id": "6c2f864e-1f45-456d-85bd-8d25d64a4d16",
+          "productId": "bb2",
+          "name": "Planta Dove Grey",
+          "price": "150.000đ",
+          "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRxlYGGNe1kEC5GM7b89GPdNP_EIAPBLwIHvx9NojYFchAfO34W",
+          "quantity": 3
+        }
+      ],
+      "totalAmount": "4,015,000đ",
+      "shippingFee": "20,000đ",
+      "finalAmount": "4,035,000đ",
+      "paymentMethod": "THE ATM",
+      "status": "Đang xử lý",
+      "orderDate": "2025-04-12T02:23:04.634Z"
     }
   ]
 }

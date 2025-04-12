@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { router } from 'expo-router';
+import { API_CONFIG } from './ApiService';
 
 const RegistrationScreen = () => {
   const [name, setName] = useState('');
@@ -55,7 +56,7 @@ const RegistrationScreen = () => {
         cart: [] 
       };
   
-      const registerResponse = await fetch('http://192.168.16.196:3000/users', {
+      const registerResponse = await fetch(`${API_CONFIG.baseURL}/users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newUser),
